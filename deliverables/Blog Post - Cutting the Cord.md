@@ -50,6 +50,10 @@ X_train_res, y_train_res = sm.fit_sample(X_train, y_train)
 
 Now that our data was balanced, we then performed **yet another train-test-split** - this time just on our training data. The reason for doing it this way is so that we don't violate the cardinal rule of cross-validation - basing decisions off of the results that your test data provide.
 
+```
+X_train_2, X_test_2, y_train_2, y_test_2 = train_test_split(X_train_res, y_train_res, test_size=0.33, random_state=20)
+```
+
 After all this glorious data munging, we plotted a ROC curve to compare how each algorithm did on identifying true positives (sensitivity) vs. false positives (specificity).
 
 ![img](https://lh3.googleusercontent.com/FPz8eqS9EMUDK8LVIeBe3B2wjhltTe0H69ISYakpJoWSaRq9WLX6Y0ixQK6AwFwDYhA6MoG6CPsfvqcrTPb1bFGva6CBzfD1ZaOKLDN83XJc_2LNmJ3yWi40nnZDCTz5417NmQAyhlo)
